@@ -76,7 +76,7 @@ def lambda_handler(event, context):
     api_token = user_api_token[user]
     url = 'http://'+user+':'+api_token+'@'+ jenkin_url + jenkinpipeline_name + '/buildWithParameters?token=' + auth_token
     try:
-        #r = requests.post(url)
+        r = requests.post(url)
         now = datetime.now(tz)
         print (now.strftime("%Y-%m-%d %H:%M:%S"))
         print("Successful trigger jenkin pipeline: " + jenkinpipeline_name + " at "+now.strftime("%Y-%m-%d %H:%M:%S"))
